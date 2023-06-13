@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 });
 
+
 function postnew() {
     let newName = document.getElementById("name").value;
     let newCity = document.getElementById("city").value;
@@ -46,16 +47,16 @@ function postnew() {
    
     $.ajax({
     	// run locally
-        //url : "http://localhost:7071/api/kurtrestaurantwriter",
+        //url : "http://localhost:7071/api/joerestaurantwriter",
         
         
         
         // run on azure pre pubsub
-        url : "https://joewritemongo.azurewebsites.net/api/joerestaurantwriter",
+        //url : "https://kurtwritemongo.azurewebsites.net/api/kurtmongowriter",
         
          // run on azure with  pubsub
         
-        //url : "https://joecosmosdatawriter.azurewebsites.net/api/joewritetocosmosinclass",
+        url : "https://joewritetopubsub.azurewebsites.net/api/joerestaurantwriter",
 
         
         
@@ -81,7 +82,7 @@ function createList(which, city) {
     }
 
     // run in cloud
-    $.get("https://kurtreadfrommongo.azurewebsites.net/api/readfrommongo/?name="+ param, function(data, status){
+    $.get("https://joecosmosdatawriter.azurewebsites.net/api/joewritetocosmosinclass/?name="+ param, function(data, status){
  
      // run local
       //$.get("http://localhost:7071/api/readfrommongo/?name=" + param, function(data, status){ 
@@ -127,3 +128,4 @@ function createList(which, city) {
 
     });
 }
+
